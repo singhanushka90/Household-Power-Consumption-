@@ -235,4 +235,4 @@ This project is developed for educational and research purposes.
 - UCI Household Electric Power Consumption Dataset
 - Scikit-learn Documentation
 - Streamlit Community
-- 
+
