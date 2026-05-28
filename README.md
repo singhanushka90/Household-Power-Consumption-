@@ -38,23 +38,12 @@ Built with complete ML workflow including preprocessing, visualization, training
 <img src="https://img.shields.io/badge/Open%20Source-Yes-purple?style=for-the-badge">
 <img src="https://img.shields.io/badge/Data%20Science-Project-red?style=for-the-badge">
 
-<br><br>
-
+<br>
 <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=3000&color=00C9FF&center=true&vCenter=true&width=700&lines=Machine+Learning+Project;Power+Consumption+Prediction;Random+Forest+Regression;Data+Science+%7C+AI+%7C+Analytics"/>
 
 </div>
 
 <!-- HERO SECTION END -->
-
-<br>
-
-<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
-<img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge">
-<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
-<img src="https://img.shields.io/badge/Open%20Source-Yes-purple?style=for-the-badge">
-<img src="https://img.shields.io/badge/Data%20Science-Project-red?style=for-the-badge">
-
-</div>
 
 ---
 
