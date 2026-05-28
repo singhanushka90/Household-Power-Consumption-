@@ -1,14 +1,19 @@
+<!-- HERO SECTION START -->
+
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,50:92FE9D,100:6A11CB&height=250&section=header&text=⚡%20Household%20Power%20Prediction&fontSize=45&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Machine%20Learning%20Project%20using%20Python%20%7C%20Scikit-Learn%20%7C%20Random%20Forest&descAlignY=60&descSize=18"/>
+
+<br>
+
 <h1 style="
-font-size:50px;
+font-size:55px;
 font-weight:900;
 background: linear-gradient(90deg,#00C9FF,#92FE9D,#6A11CB);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 font-family:Segoe UI, sans-serif;
-letter-spacing:1px;
-margin-bottom:10px;
+margin-top:20px;
 ">
 ⚡ Household Power Consumption Prediction
 </h1>
@@ -20,11 +25,26 @@ max-width:850px;
 line-height:1.8;
 font-family:Segoe UI, sans-serif;
 ">
-An end-to-end <b>Machine Learning Project</b> that predicts household electricity consumption using
+An industry-level <b>Machine Learning Project</b> that predicts household electricity consumption using
 <b>Python, Pandas, NumPy, Scikit-learn, and Random Forest Regression</b>.
-This project demonstrates the complete ML workflow including data preprocessing,
-feature engineering, visualization, model training, evaluation, and model deployment preparation.
+Built with complete ML workflow including preprocessing, visualization, training, evaluation, and model saving.
 </p>
+
+<br>
+
+<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
+<img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/Open%20Source-Yes-purple?style=for-the-badge">
+<img src="https://img.shields.io/badge/Data%20Science-Project-red?style=for-the-badge">
+
+<br><br>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=3000&color=00C9FF&center=true&vCenter=true&width=700&lines=Machine+Learning+Project;Power+Consumption+Prediction;Random+Forest+Regression;Data+Science+%7C+AI+%7C+Analytics"/>
+
+</div>
+
+<!-- HERO SECTION END -->
 
 <br>
 
