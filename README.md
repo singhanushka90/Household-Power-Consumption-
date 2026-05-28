@@ -1,136 +1,203 @@
-⚡ Household Power Consumption Prediction using Machine Learning
+<div align="center">
 
-An end-to-end Machine Learning project that predicts Global Active Power Consumption using household electrical measurements.
-This project demonstrates the complete ML workflow including:
+<h1 style="
+font-size:50px;
+font-weight:900;
+background: linear-gradient(90deg,#00C9FF,#92FE9D,#6A11CB);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-family:Segoe UI, sans-serif;
+letter-spacing:1px;
+margin-bottom:10px;
+">
+⚡ Household Power Consumption Prediction
+</h1>
 
-- Data preprocessing
-- Feature engineering
-- Data visualization
-- Model training
-- Model evaluation
-- Model saving
+<p style="
+font-size:20px;
+color:#555;
+max-width:850px;
+line-height:1.8;
+font-family:Segoe UI, sans-serif;
+">
+An end-to-end <b>Machine Learning Project</b> that predicts household electricity consumption using
+<b>Python, Pandas, NumPy, Scikit-learn, and Random Forest Regression</b>.
+This project demonstrates the complete ML workflow including data preprocessing,
+feature engineering, visualization, model training, evaluation, and model deployment preparation.
+</p>
 
-Built using Python, Pandas, Scikit-learn, and Matplotlib.
+<br>
 
----
+<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
+<img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/Open%20Source-Yes-purple?style=for-the-badge">
+<img src="https://img.shields.io/badge/Data%20Science-Project-red?style=for-the-badge">
 
-📌 Project Overview
-
-The goal of this project is to analyze household electricity consumption data and predict:
-
-🎯 Target Variable
-
-- "Global_active_power"
-
-The project uses machine learning algorithms to understand energy usage patterns and generate accurate predictions.
-
----
-
-🚀 Features
-
-✅ Data Cleaning & Preprocessing
-✅ Datetime Feature Extraction
-✅ Feature Scaling using StandardScaler
-✅ Linear Regression Model
-✅ Random Forest Regressor Model
-✅ RMSE & R² Score Evaluation
-✅ Feature Importance Analysis
-✅ Actual vs Predicted Visualization
-✅ Model Saving with Joblib
+</div>
 
 ---
 
-🛠️ Tech Stack
+# 🌟 Project Overview
 
-Programming Language
+This project analyzes household electricity consumption data and predicts:
 
-- Python
+## 🎯 Target Variable
+- **Global Active Power Consumption**
 
-Libraries Used
+The workflow includes:
 
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Joblib
+✔ Data Cleaning  
+✔ Feature Engineering  
+✔ Datetime Processing  
+✔ Feature Scaling  
+✔ Model Training  
+✔ Performance Evaluation  
+✔ Visualization  
+✔ Model Saving  
 
 ---
 
-📂 Dataset Information
+# 🚀 Features
+
+<table align="center">
+<tr>
+<td>✅ Data Preprocessing</td>
+<td>✅ Feature Engineering</td>
+</tr>
+
+<tr>
+<td>✅ Linear Regression</td>
+<td>✅ Random Forest Regressor</td>
+</tr>
+
+<tr>
+<td>✅ RMSE & R² Evaluation</td>
+<td>✅ Visualization</td>
+</tr>
+
+<tr>
+<td>✅ Feature Importance Analysis</td>
+<td>✅ Model Serialization</td>
+</tr>
+</table>
+
+---
+
+# 🛠️ Tech Stack
+
+<div align="center">
+
+| Technology | Usage |
+|---|---|
+| Python | Core Programming |
+| Pandas | Data Analysis |
+| NumPy | Numerical Computing |
+| Matplotlib | Data Visualization |
+| Scikit-learn | Machine Learning |
+| Joblib | Model Saving |
+
+</div>
+
+---
+
+# 📂 Dataset Information
 
 The dataset contains household electrical power consumption measurements collected over time.
 
-Features Used
+## 📌 Features Used
 
-- Global_reactive_power
-- Voltage
-- Sub_metering_1
-- Sub_metering_2
-- Sub_metering_3
-- Hour
-- Day
-- Month
-- Weekday
+```python
+[
+ 'Global_reactive_power',
+ 'Voltage',
+ 'Sub_metering_1',
+ 'Sub_metering_2',
+ 'Sub_metering_3',
+ 'hour',
+ 'day',
+ 'month',
+ 'weekday'
+]
+```
 
-Target
+## 🎯 Target
 
-- Global_active_power
+```python
+Global_active_power
+```
 
 ---
 
-📊 Data Preprocessing
+# 📊 Data Preprocessing
 
-✔ Datetime Conversion
+## ✔ Datetime Conversion
 
+```python
 df['DateTime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
+```
 
-✔ Feature Extraction
+---
 
+## ✔ Feature Extraction
+
+```python
 df['hour'] = df['DateTime'].dt.hour
 df['day'] = df['DateTime'].dt.day
 df['month'] = df['DateTime'].dt.month
 df['weekday'] = df['DateTime'].dt.weekday
+```
 
-✔ Removing Unnecessary Columns
+---
 
+## ✔ Removing Unnecessary Columns
+
+```python
 df = df.drop(['Date', 'Time', 'DateTime'], axis=1)
+```
 
 ---
 
-🤖 Machine Learning Models
+# 🤖 Machine Learning Models
 
-1️⃣ Linear Regression
+<div align="center">
 
-Performance
+| Model | Purpose |
+|---|---|
+| Linear Regression | Baseline Model |
+| Random Forest Regressor | Advanced Prediction |
 
-- RMSE: "0.5216"
-- R² Score: "0.7578"
-
-from sklearn.linear_model import LinearRegression
-
-lr = LinearRegression()
-lr.fit(X_train, y_train)
+</div>
 
 ---
 
-2️⃣ Random Forest Regressor
+# 📈 Model Performance
 
-Random Forest provided better prediction performance and feature importance analysis.
+## 🔹 Linear Regression
 
+```python
+RMSE : 0.5216
+R² Score : 0.7578
+```
+
+---
+
+# 🌲 Random Forest Regressor
+
+```python
 from sklearn.ensemble import RandomForestRegressor
 
 rf = RandomForestRegressor(n_estimators=50)
 rf.fit(X_train, y_train)
+```
 
 ---
 
-📈 Visualizations
+# 📉 Visualizations
 
-✔ Feature Importance Graph
+## ✔ Feature Importance Analysis
 
-The model identifies the most important features affecting power consumption.
-
-Top Important Features
+Top Important Features:
 
 - Sub_metering_3
 - Sub_metering_1
@@ -139,97 +206,123 @@ Top Important Features
 
 ---
 
-✔ Actual vs Predicted Comparison
+## ✔ Actual vs Predicted Comparison
 
-Visual comparison between actual and predicted household power consumption values.
+The graph compares:
+- Actual household power consumption
+- Predicted power consumption
+
+to evaluate model accuracy.
 
 ---
 
-💾 Saving the Model
+# 💾 Model Saving
 
+```python
 import joblib
 
 joblib.dump(rf, 'random_forest_power_model.pkl')
 joblib.dump(scaler, 'scaler.save')
+```
 
 ---
 
-📁 Project Structure
+# 📁 Project Structure
 
+```bash
 Household-Power-Consumption/
 │
 ├── power.ipynb
 ├── random_forest_power_model.pkl
 ├── scaler.save
 ├── README.md
+```
 
 ---
 
-⚙️ Installation
+# ⚙️ Installation
 
-Clone the Repository
+## 📥 Clone Repository
 
+```bash
 git clone https://github.com/your-username/Household-Power-Consumption.git
-
-Navigate to Folder
-
-cd Household-Power-Consumption
-
-Install Dependencies
-
-pip install pandas numpy matplotlib scikit-learn joblib
+```
 
 ---
 
-▶️ Run the Project
+## 📂 Move to Folder
 
-Open Jupyter Notebook:
+```bash
+cd Household-Power-Consumption
+```
 
+---
+
+## 📦 Install Dependencies
+
+```bash
+pip install pandas numpy matplotlib scikit-learn joblib
+```
+
+---
+
+# ▶️ Run the Project
+
+```bash
 jupyter notebook
+```
 
 Then open:
 
+```bash
 power.ipynb
+```
 
 ---
 
-📌 Future Improvements
+# 📌 Future Improvements
 
-- Deploy using Flask or Streamlit
-- Add Deep Learning models
-- Real-time energy prediction
-- Hyperparameter tuning
-- Dashboard integration
-- Time-series forecasting
+✨ Streamlit Deployment  
+✨ Flask API Integration  
+✨ Deep Learning Models  
+✨ Real-Time Prediction  
+✨ Dashboard Analytics  
+✨ Time-Series Forecasting  
 
 ---
 
-📚 Learning Outcomes
+# 📚 Learning Outcomes
 
-Through this project, I learned:
+This project helped in understanding:
 
-- Data preprocessing techniques
+- Data preprocessing
 - Feature engineering
-- Regression algorithms
-- Model evaluation metrics
+- Regression models
+- Performance metrics
 - Data visualization
-- Model serialization
+- End-to-end ML workflow
 
 ---
 
-👩‍💻 Author
+# 👩‍💻 Author
 
-Anushka Singh
+<div align="center">
 
-B.Tech CSE (AI & Data Science)
-Khwaja Moinuddin Chishti Language University (KMCLU)
+## Anushka Singh
 
-Skills
+🎓 B.Tech CSE (AI & Data Science)  
+🏫 Khwaja Moinuddin Chishti Language University (KMCLU)
+
+### 💻 Skills
 
 Python • Machine Learning • Data Analysis • Pandas • Scikit-learn • Visualization
 
+</div>
+
 ---
 
-⭐ Support
+<div align="center">
 
-If you like this project, give it a ⭐ on GitHub!
+# ⭐ If you like this project, give it a star on GitHub ⭐
+
+</div>
