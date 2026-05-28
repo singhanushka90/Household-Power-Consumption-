@@ -1,238 +1,235 @@
-# ⚡ Household Global Active Power Prediction System
+⚡ Household Power Consumption Prediction using Machine Learning
 
-An end-to-end Machine Learning project that predicts **Household Global Active Power Consumption** using historical electrical consumption data.  
-The project leverages data preprocessing, feature engineering, regression modeling, and an interactive Streamlit web application for real-time prediction.
+An end-to-end Machine Learning project that predicts Global Active Power Consumption using household electrical measurements.
+This project demonstrates the complete ML workflow including:
 
----
+- Data preprocessing
+- Feature engineering
+- Data visualization
+- Model training
+- Model evaluation
+- Model saving
 
-# 🚀 Project Overview
-
-This project focuses on predicting household power consumption patterns using machine learning techniques.  
-It helps analyze electrical energy usage based on multiple household parameters such as voltage, reactive power, and sub-metering values.
-
-The application provides a user-friendly interface where users can input electrical parameters and instantly receive predicted global active power consumption.
-
----
-
-# 🎯 Objectives
-
-- Analyze household power consumption data
-- Perform feature engineering on time-series attributes
-- Train a Machine Learning regression model
-- Build a real-time prediction interface using Streamlit
-- Deploy an interactive AI-powered energy prediction system
+Built using Python, Pandas, Scikit-learn, and Matplotlib.
 
 ---
 
-# 🧠 Machine Learning Workflow
+📌 Project Overview
 
-## 1. Data Collection
-The dataset used contains household electrical power consumption measurements over time.
+The goal of this project is to analyze household electricity consumption data and predict:
 
-### Dataset Features:
-- Global Reactive Power
+🎯 Target Variable
+
+- "Global_active_power"
+
+The project uses machine learning algorithms to understand energy usage patterns and generate accurate predictions.
+
+---
+
+🚀 Features
+
+✅ Data Cleaning & Preprocessing
+✅ Datetime Feature Extraction
+✅ Feature Scaling using StandardScaler
+✅ Linear Regression Model
+✅ Random Forest Regressor Model
+✅ RMSE & R² Score Evaluation
+✅ Feature Importance Analysis
+✅ Actual vs Predicted Visualization
+✅ Model Saving with Joblib
+
+---
+
+🛠️ Tech Stack
+
+Programming Language
+
+- Python
+
+Libraries Used
+
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Joblib
+
+---
+
+📂 Dataset Information
+
+The dataset contains household electrical power consumption measurements collected over time.
+
+Features Used
+
+- Global_reactive_power
 - Voltage
-- Sub Metering 1
-- Sub Metering 2
-- Sub Metering 3
-- Date & Time Information
-
----
-
-## 2. Data Preprocessing
-
-Performed:
-- Handling missing values
-- Datetime conversion
-- Feature extraction
-- Numerical transformations
-- Scaling using StandardScaler
-
-### Extracted Time Features:
+- Sub_metering_1
+- Sub_metering_2
+- Sub_metering_3
 - Hour
 - Day
 - Month
 - Weekday
 
----
+Target
 
-## 3. Feature Engineering
-
-Engineered meaningful temporal features from raw datetime values to improve prediction performance.
+- Global_active_power
 
 ---
 
-## 4. Model Training
+📊 Data Preprocessing
 
-### Algorithm Used:
-- Random Forest Regressor
+✔ Datetime Conversion
 
-### Why Random Forest?
-- Handles nonlinear relationships effectively
-- Robust against overfitting
-- Provides strong regression performance
+df['DateTime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
 
----
+✔ Feature Extraction
 
-## 5. Model Evaluation
+df['hour'] = df['DateTime'].dt.hour
+df['day'] = df['DateTime'].dt.day
+df['month'] = df['DateTime'].dt.month
+df['weekday'] = df['DateTime'].dt.weekday
 
-The model performance was evaluated using regression metrics such as:
+✔ Removing Unnecessary Columns
 
-- MAE (Mean Absolute Error)
-- RMSE (Root Mean Squared Error)
-- R² Score
+df = df.drop(['Date', 'Time', 'DateTime'], axis=1)
 
 ---
 
-# 🛠️ Technologies Used
+🤖 Machine Learning Models
 
-| Technology | Purpose |
-|---|---|
-| Python | Core Programming |
-| Pandas | Data Manipulation |
-| NumPy | Numerical Operations |
-| Scikit-learn | Machine Learning |
-| Streamlit | Web Application |
-| Joblib | Model Serialization |
-| Matplotlib | Visualization |
+1️⃣ Linear Regression
+
+Performance
+
+- RMSE: "0.5216"
+- R² Score: "0.7578"
+
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression()
+lr.fit(X_train, y_train)
 
 ---
 
-# 📂 Project Structure
+2️⃣ Random Forest Regressor
 
-```bash
-Household-Power-Prediction/
+Random Forest provided better prediction performance and feature importance analysis.
+
+from sklearn.ensemble import RandomForestRegressor
+
+rf = RandomForestRegressor(n_estimators=50)
+rf.fit(X_train, y_train)
+
+---
+
+📈 Visualizations
+
+✔ Feature Importance Graph
+
+The model identifies the most important features affecting power consumption.
+
+Top Important Features
+
+- Sub_metering_3
+- Sub_metering_1
+- Sub_metering_2
+- Hour
+
+---
+
+✔ Actual vs Predicted Comparison
+
+Visual comparison between actual and predicted household power consumption values.
+
+---
+
+💾 Saving the Model
+
+import joblib
+
+joblib.dump(rf, 'random_forest_power_model.pkl')
+joblib.dump(scaler, 'scaler.save')
+
+---
+
+📁 Project Structure
+
+Household-Power-Consumption/
 │
-├── app.py
-├── power_prediction.ipynb
-├── model.pkl
-├── scaler.pkl
-├── household_power_consumption.txt
-├── requirements.txt
+├── power.ipynb
+├── random_forest_power_model.pkl
+├── scaler.save
 ├── README.md
-```
 
 ---
 
-# 🌐 Streamlit Application
+⚙️ Installation
 
-The project includes a fully interactive Streamlit web application.
+Clone the Repository
 
-### User Inputs:
-- Global Reactive Power
-- Voltage
-- Sub Metering Values
-- Hour
-- Day
-- Month
-- Weekday
+git clone https://github.com/your-username/Household-Power-Consumption.git
 
-### Output:
-- Predicted Household Global Active Power Consumption
+Navigate to Folder
+
+cd Household-Power-Consumption
+
+Install Dependencies
+
+pip install pandas numpy matplotlib scikit-learn joblib
 
 ---
 
-# ⚙️ Installation & Setup
+▶️ Run the Project
 
-## Clone Repository
+Open Jupyter Notebook:
 
-```bash
-git clone https://github.com/your-username/Household-Power-Prediction.git
-```
+jupyter notebook
 
----
+Then open:
 
-## Navigate to Project Folder
-
-```bash
-cd Household-Power-Prediction
-```
+power.ipynb
 
 ---
 
-## Install Dependencies
+📌 Future Improvements
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# ▶️ Run Application
-
-```bash
-streamlit run app.py
-```
+- Deploy using Flask or Streamlit
+- Add Deep Learning models
+- Real-time energy prediction
+- Hyperparameter tuning
+- Dashboard integration
+- Time-series forecasting
 
 ---
 
-# 📊 Example Prediction
+📚 Learning Outcomes
 
-## Input:
+Through this project, I learned:
 
-| Feature | Value |
-|---|---|
-| Voltage | 234 |
-| Reactive Power | 0.4 |
-| Sub Metering 1 | 0 |
-| Sub Metering 2 | 1 |
-| Sub Metering 3 | 17 |
-| Hour | 18 |
-| Day | 16 |
-| Month | 12 |
-| Weekday | 5 |
+- Data preprocessing techniques
+- Feature engineering
+- Regression algorithms
+- Model evaluation metrics
+- Data visualization
+- Model serialization
 
 ---
 
-## Output:
+👩‍💻 Author
 
-```bash
-Predicted Global Active Power: 4.28 kW
-```
+Anushka Singh
 
----
+B.Tech CSE (AI & Data Science)
+Khwaja Moinuddin Chishti Language University (KMCLU)
 
-# 🔥 Key Highlights
+Skills
 
-✅ End-to-End Machine Learning Pipeline  
-✅ Real-world Energy Consumption Dataset  
-✅ Feature Engineering  
-✅ Regression-Based Prediction  
-✅ Streamlit Deployment Ready  
-✅ Interactive User Interface  
-✅ Scalable Project Architecture
+Python • Machine Learning • Data Analysis • Pandas • Scikit-learn • Visualization
 
 ---
 
-# 📈 Future Improvements
+⭐ Support
 
-- Deep Learning-based Forecasting
-- Time-Series Prediction using LSTM
-- Real-time Smart Meter Integration
-- Energy Usage Visualization Dashboard
-- Cloud Deployment
-- API Integration
-
----
-
-# 👩‍💻 Author
-
-## Anushka Singh
-
-BTech CSE (AI & Data Science) Student  
-Passionate about Machine Learning, NLP, and AI-based Applications.
-
----
-
-# 📜 License
-
-This project is developed for educational and research purposes.
-
----
-
-# ⭐ Acknowledgements
-
-- UCI Household Electric Power Consumption Dataset
-- Scikit-learn Documentation
-- Streamlit Community
-
+If you like this project, give it a ⭐ on GitHub!
