@@ -15,7 +15,6 @@ background: linear-gradient(90deg,#00C9FF,#92FE9D,#6A11CB);
 font-family:Segoe UI, sans-serif;
 margin-top:20px;
 ">
-⚡ Household Power Consumption Prediction
 </h1>
 
 <p style="
