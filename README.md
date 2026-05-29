@@ -241,6 +241,7 @@ joblib.dump(scaler, 'scaler.save')
 Household-Power-Consumption/
 │
 ├── power.ipynb
+|__power.py
 ├── random_forest_power_model.pkl
 ├── scaler.save
 ├── README.md
