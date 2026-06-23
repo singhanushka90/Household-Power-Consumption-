@@ -254,7 +254,7 @@ Household-Power-Consumption/
 ## 📥 Clone Repository
 
 ```bash
-git clone https://github.com/your-username/Household-Power-Consumption.git
+git clone https://github.com/singhanushka90/Household-Power-Consumption.git
 ```
 
 ---
